@@ -2,7 +2,7 @@
 
 Understand any API instantly — without digging through JSON.
 
-## ⚡ Why this exists
+## ⚡ Why you need it
 
 Working with API responses is slow and error-prone:
 - inconsistent data shapes

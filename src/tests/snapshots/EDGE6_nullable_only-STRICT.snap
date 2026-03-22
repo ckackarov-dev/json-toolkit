@@ -1,0 +1,1 @@
+import { z } from "zod"; const UserAgeSchema = z.object({ age: z.number() }); const UserAgeNullSchema = z.object({ age: z.null() }); const RootObjectSchema = z.object({ users: z.array(z.union([UserAgeSchema, UserAgeNullSchema])) });

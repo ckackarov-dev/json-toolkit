@@ -1,0 +1,1 @@
+import { z } from "zod"; type User = { name: string; age?: number | null; }; type RootObject = { users: User[]; }; const UserSchema = z.object({ name: z.string(), age: z.number().nullable().optional() }).strict(); const RootObjectSchema = z.object({ users: z.array(UserSchema) }).strict();

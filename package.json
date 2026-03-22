@@ -1,0 +1,84 @@
+{
+  "name": "json-lens",
+  "displayName": "JSON Lens",
+  "description": "Instant JSON understanding with TypeScript and Zod generation",
+  "license": "MIT",
+  "publisher": "alexk-devtools.c",
+  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "json",
+    "typescript",
+    "zod",
+    "schema",
+    "validation",
+    "hover",
+    "json analysis",
+    "json debug",
+    "json tools",
+    "developer productivity",
+    "codegen"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:jsonLens.generate",
+    "onLanguage:json",
+    "onLanguage:jsonc",
+    "onLanguage:javascript",
+    "onLanguage:typescript"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "json"
+      },
+      {
+        "id": "jsonc"
+      },
+      {
+        "id": "typescript"
+      },
+      {
+        "id": "javascript"
+      }
+    ],
+    "commands": [
+      {
+        "command": "jsonLens.generate",
+        "title": "JSON Lens: Generate TypeScript + Zod"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "jsonLens.generate",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "test:json": "npm run compile && node dist/tests.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.x",
+    "@types/vscode": "^1.110.0",
+    "esbuild": "^0.27.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "json5": "^2.2.3",
+    "zod": "^4.3.6"
+  }
+}

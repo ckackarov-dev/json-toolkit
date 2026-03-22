@@ -1,0 +1,1 @@
+import { z } from "zod"; const UserAgeSchema = z.object({ age: z.number() }); const UserSchema = z.object({ }); const RootObjectSchema = z.object({ users: z.array(z.object({ age: z.number().optional() })) });
